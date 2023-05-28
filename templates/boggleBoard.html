@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Boggle</title>
+        <link rel="stylesheet" href="static/style.css">
+    </head>
+    <body>
+        <h1 id="score">0</h1>
+        <h1 id="highscore">High Score: 0</h1>
+        {%for row in board%}
+        <div class="row">
+        {%for letter in row%}
+        <div class="block">
+            <p>{{letter}}</p>
+        </div>
+        {%endfor%}
+        </div>
+        <br>
+        <br>
+        <br>
+        <br>
+        {%endfor%}
+        <br>
+        <br>
+        <h1 id="timer">Timer: 60</h1>
+        <input type="button" value="START" id="startButton" onclick="window.location.reload()">
+        <br>
+        <form>
+            <label for="guess">Enter your guess here: </label>
+            <input type="text" id="guess">
+            <input type="submit" value="Submit Guess">
+        </form>
+        <br>
+        <ul id="info"></ul>
+        
+    <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+        <script src="https://unpkg.com/axios/dist/axios.js"></script>
+        <script src="/static/script.js"></script>
+    </body>
+</html>
